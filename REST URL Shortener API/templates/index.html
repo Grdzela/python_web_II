@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>URL Shortener</title>
+  </head>
+  <body>
+    <h1>URL Shortener</h1>
+    <form method="POST" action="{{ url_for('shorten') }}">
+      <label for="url">Enter the URL:</label><br>
+      <input type="text" id="url" name="url"><br>
+      {% if error %}
+        <p style="color:red">{{ error }}</p>
+      {% endif %}
+      <br>
+      <label for="custom_code">Custom short code (optional):</label><br>
+      <input type="text" id="custom_code" name="custom_code"><br>
+      <br>
+      <input type="submit" value="Shorten">
+    </form>
+  </body>
+</html>
+
